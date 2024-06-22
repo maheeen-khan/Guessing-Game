@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Krona One";
+    src: url("Krona_One/KronaOne-Regular.ttf");
+}
+
+.container{
+    background-color: rgb(213, 231, 225);
+}
+.head{
+    font-size: 72px;
+    background: -webkit-linear-gradient(#57dd0a, #f7abab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-family: "Krona One";
+}
