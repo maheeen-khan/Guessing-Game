@@ -5,7 +5,7 @@
 
 button a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 .container{
     background-color: rgb(213, 231, 225);
@@ -17,4 +17,11 @@ button a{
     -webkit-text-fill-color: transparent;
 
     font-family: "Krona One";
+}
+
+.card{
+    padding: 30px 20px 10px 0px;
+}
+.card :hover{
+    cursor: pointer;
 }
