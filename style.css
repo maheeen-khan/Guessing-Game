@@ -3,6 +3,10 @@
     src: url("Krona_One/KronaOne-Regular.ttf");
 }
 
+button a{
+    text-decoration: none;
+    color: black;
+}
 .container{
     background-color: rgb(213, 231, 225);
 }
