@@ -8,7 +8,7 @@ button a{
     color: white;
 }
 .container{
-    background-color: rgb(213, 231, 225);
+    background-color: rgb(213, 231, 225); 
 }
 .head{
     font-size: 72px;
@@ -24,4 +24,14 @@ button a{
 }
 .card :hover{
     cursor: pointer;
+}
+
+/* Instruction page */
+
+.inst-head{
+    color: #41a408;
+    padding-left: 20px;
+}
+ol{
+    list-style-type: none;
 }
