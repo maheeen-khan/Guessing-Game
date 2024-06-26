@@ -19,13 +19,16 @@ button a{
     font-family: "Krona One";
 }
 
-.card{
+.own-card{
     padding: 30px 20px 10px 0px;
 }
 .card :hover{
     cursor: pointer;
 }
 
+.own-card2{
+    padding-top: 20px;
+}
 /* Instruction page */
 
 .inst-head{
