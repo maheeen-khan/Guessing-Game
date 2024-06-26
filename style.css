@@ -11,7 +11,7 @@ button a{
     background-color: rgb(213, 231, 225); 
 }
 .head{
-    font-size: 72px;
+    /* font-size: 82px; */
     background: -webkit-linear-gradient(#57dd0a, #f7abab);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -29,6 +29,9 @@ button a{
 .own-card2{
     padding-top: 20px;
 }
+.headline{
+    color: rgb(98, 97, 97);
+}
 /* Instruction page */
 
 .inst-head{
@@ -42,6 +45,8 @@ ol{
     padding-left: 45px !important;
     padding-right: 45px !important;
 }
+
+
 @media screen and (max-width:767px) {
     .back-btn{
        width: 100%;
