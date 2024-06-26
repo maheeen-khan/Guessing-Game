@@ -38,3 +38,12 @@ button a{
 ol{
     list-style-type: none;
 }
+.back-btn{
+    padding-left: 45px !important;
+    padding-right: 45px !important;
+}
+@media screen and (max-width:767px) {
+    .back-btn{
+       width: 100%;
+    }
+}
