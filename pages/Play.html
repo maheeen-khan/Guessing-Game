@@ -9,47 +9,159 @@
     <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
+
+    <style>
+        body {
+          font-family: sans-serif;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+          background-color: #f0f0f0;
+        }
+        
+        .container {
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          text-align: center;
+        }
+        
+        .image {
+          width: 200px;
+          height: auto;
+          margin-bottom: 20px;
+        }
+        
+        .question {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+        
+        .answer {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+        
+        .input-field {
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          width: 200px;
+        }
+        
+        .button {
+          padding: 10px 20px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        
+        .button:hover {
+          background-color: #45a049;
+        }
+        
+        .result {
+          margin-top: 20px;
+          font-size: 18px;
+        }
+        
+        .correct {
+          color: green;
+        }
+        
+        .incorrect {
+          color: red;
+        }
+        </style>
+
+
 </head>
 <body>
 
-    <div class="container">
 
-        <div class="head text-center mt-5">
-            <h2>Features Section</h2>
-        </div>
-<br>
+        <div class="container mt-3">
 
-        <div class="row flex-lg-row-reverse flex-md-row-reverse  mt-5">
-
-            <div class="col-lg-5 col-md-5 col-sm-12 mb-5">
-                <img src="../images/features-removebg-preview.png" alt="features" class="img-fluid animate__animated animate__heartBeat ms-5">
+            <div class="head my-5 text-center">
+                <h1>Word Guessing Game</h1>
             </div>
 
-    <div class="col-lg-7 col-md-7 col-sm-12">
-
-
-   
-    <h4 class="inst-head">Features:</h4>
-    <br>
-    <ol>
-        <li>🤩 Fun and engaging gameplay</li> <br>
-        <li>💬 Real-time feedback on guesses</li> <br>
-        <li>👨‍💻 Interactive and user-friendly interface</li> <br>
-        <li>💡 Hints system that provides clues </li> <br>
-        <li>✅ Scoreboard to track the user's performance. </li> <br>
-        <li>📝 Regular updates with new words and features based on user feedback. </li> <br>
-
-    </ol>
-
-</div>
+            <h1 class="question" id="question"></h1>
+            <img src="" alt="" id="image" class="image"> 
+            <div class="answer" id="answer"></div>
+            <input type="text" id="guess" class="input-field" placeholder="Enter your guess">
+            <button class="button" onclick="checkAnswer()">Check Answer</button>
+            <div class="result" id="result"></div>
+        </div>
 
 
 
-</div>
 
 <button type="button" class="btn btn-primary back-btn"><a href="../index.html">Back</a></button>
 
-</div><!-- cont -->
+
+<script>
+    // Questions array
+    var questions = [
+      {
+        image: "images/painter.png",
+        answer: "<img src='../images/paint.jpg' alt='Palette' class='image'> + &nbsp <img src='../images/e.png' alt='E' class='image'> &nbsp + <img src='../images/r.png' alt='R' class='image'> =",
+        correctAnswer: "painter"
+      },
+      {
+        image: "images/fruit.png",
+        answer: "<img src='../images/foot.png' alt='Foot' class='image'> + &nbsp &nbsp <img src='../images/ball.jpg' alt='ball' class='image'> &nbsp &nbsp &nbsp=",
+        correctAnswer: "football"
+      },
+      {
+        image: "images/music.png",
+        answer: "<img src='../images/sun.jpg' alt='sun' class='image'> + &nbsp &nbsp <img src='../images/flower.jpg' alt='flower' class='image'> &nbsp &nbsp =",
+        correctAnswer: "sunflower"
+      }
+    ];
+    
+    // Current question index
+    var currentQuestion = 0;
+    
+    // Display current question
+    function displayQuestion() {
+      var question = questions[currentQuestion];
+      document.getElementById("question").textContent = "Can you guess the word?";
+      document.getElementById("image").src = question.image;
+      document.getElementById("answer").innerHTML = question.answer;
+    }
+    
+    // Check answer and display result
+    function checkAnswer() {
+      var guess = document.getElementById("guess").value.toLowerCase();
+      var result = document.getElementById("result");
+      var correctAnswer = questions[currentQuestion].correctAnswer;
+    
+      if (guess === correctAnswer) {
+        result.textContent = "Correct!";
+        result.classList.add("correct");
+        result.classList.remove("incorrect");
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          displayQuestion();
+        } else {
+          result.textContent = "Congratulations! You've completed all questions.";
+        }
+      } else {
+        result.textContent = "Incorrect! Try again.";
+        result.classList.add("incorrect");
+        result.classList.remove("correct");
+      }
+    }
+    
+    // Display first question
+    displayQuestion();
+    </script>
 
 
     <script src="../bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
