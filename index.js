@@ -1,4 +1,3 @@
-
 // Questions array
 var questions = [
     {
